@@ -1,0 +1,64 @@
+<link rel="import" href="../bower_components/polymer/polymer.html">
+
+<dom-module id="about-me">
+
+  <template>
+    <style>
+      .card {
+        box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 1px 5px 0 rgba(0, 0, 0, 0.12), 0 3px 1px -2px rgba(0, 0, 0, 0.2);
+        padding: 16px;
+        margin: 24px;
+        border-radius: 5px;
+        background-color: #fff;
+        color: #757575;
+      }
+      .profile_pic {
+        margin-left: auto;
+        margin-right: auto;
+        width: 256px;
+      }
+      .profile_pic img {
+        box-shadow: 0 0 4px 2px rgba(0, 0, 0, 0.2);
+        border: 6px solid white;
+        height: 256px;
+        width: 256px;
+        border-radius: 50%;
+      }
+      .header {
+        font-size: 22px;
+        text-align: center;
+        margin: 16px 0 0 0;
+        color: #212121;
+      }
+      .line {
+        border-bottom: 2px solid black;
+        margin-left: auto;
+        margin-right: auto;
+        max-width: 250px;
+      }
+      p {
+        font-size: 16px;
+      }
+    </style>
+    <div class="card">
+      <div class="profile_pic">
+        <img src="../images/FullSizeR-20.jpg">
+      </div>
+      <div class="header">
+        About Me
+      </div>
+      <div class="line"></div>
+      <p>The quick brown fox jumped over the lazy dog.</p>
+    </div>
+  </template>
+
+  <script>
+    Polymer({
+      is: 'about-me',
+      ready: function() {
+        this.style.display = 'block';
+      }
+    });
+  </script>
+
+</dom-module>
