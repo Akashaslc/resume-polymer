@@ -14,13 +14,13 @@
 
   <template>
 
-    <style>
+    <style include="iron-flex iron-flex-alignment">
     app-header {
       position: fixed;
       top: 0;
       left: 0;
       right: 0;
-      z-index: 0;
+      z-index: 1;
       background-color: #0b8043;
       color: white;
       --app-header-background-front-layer: {
@@ -96,6 +96,7 @@
     }
     </style>
 
+
   <app-header condenses fixed effects="resize-title blend-background waterfall">
     <app-toolbar>
       <h4 condensed-title>Samir Suthar <span>| Web Developer</span></h4>
@@ -120,6 +121,6 @@
   <script>
     Polymer({
       is: "resume-app"
-    });
+  });
   </script>
 </dom-module>

@@ -1,14 +1,18 @@
 <link rel="import" href="../bower_components/polymer/polymer.html">
+<link rel="import" href="../bower_components/iron-icons/communication-icons.html">
+<link rel="import" href="../bower_components/google-map/google-map.html">
 
 <dom-module id="about-me">
 
   <template>
-    <style>
+    <style include="iron-flex iron-flex-alignment">
       .card {
         box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 1px 5px 0 rgba(0, 0, 0, 0.12), 0 3px 1px -2px rgba(0, 0, 0, 0.2);
         padding: 16px;
         margin: 24px;
-        border-radius: 5px;
+        margin-left: 288px;
+        margin-right: 288px;
+        border-radius: 8px;
         background-color: #fff;
         color: #757575;
       }
@@ -18,7 +22,7 @@
         width: 256px;
       }
       .profile_pic img {
-        box-shadow: 0 0 4px 2px rgba(0, 0, 0, 0.2);
+        box-shadow: 0 0 4px 2px rgba(0, 0, 0, 0.4);
         border: 6px solid white;
         height: 256px;
         width: 256px;
@@ -38,18 +42,78 @@
       }
       p {
         font-size: 16px;
+        padding-left: 10px;
+        padding-right: 10px;
+      }
+      #contact {
+        margin-left: auto;
+        margin-right: auto;
+        width: 122px;
+      }
+      div#contact p {
+        margin: 7px;
+      }
+      paper-icon-button {
+        --paper-icon-button-ink-color: black;
+        margin-left: auto;
+        margin-right: auto;
+      }
+      #map {
+        height: 400px;
+        width: 100%;
+      }
+      google-map {
+        height: 100%;
+        width: 100%;
+      }
+      @media (max-width:700px) {
+        #container {
+          display: block;
+        }
+        .card {
+          margin-left: 24px;
+          margin-right: 24px;
+        }
       }
     </style>
     <div class="card">
-      <div class="profile_pic">
-        <img src="../images/FullSizeR-20.jpg">
+      <div id="container" class="layout vertical">
+
+        <div class="profile_pic">
+          <img src="../images/FullSizeR-20.jpg">
+        </div>
+
+        <div class="layout horizontal" id="contact">
+
+          <div>
+            <paper-icon-button icon="mail"></paper-icon-button>
+          </div>
+
+            <div>
+              <paper-icon-button src="../images/github.svg"></paper-icon-button>
+            </div>
+
+            <div>
+              <paper-icon-button src="../images/iconmonstr-linkedin-3.svg"></paper-icon-button>
+            </div>
+
+        </div>
       </div>
+
       <div class="header">
         About Me
       </div>
+
       <div class="line"></div>
-      <p>The quick brown fox jumped over the lazy dog.</p>
+
+      <p>{{about.summary}}</p>
+
+      <div id="map">
+        <google-map latitude="40.7608" longitude="-111.8910" api-key="AIzaSyAt3hbng83stRJQkT5PZZNztFZqYjDpicg"></google-map>
+      </div>
+
     </div>
+
   </template>
 
   <script>
@@ -57,6 +121,32 @@
       is: 'about-me',
       ready: function() {
         this.style.display = 'block';
+        this.about = {
+          name: "Samir Suthar",
+          label: "Web Developer",
+          email: "samir.suthar90@gmail.com",
+          phone: "(801).641.0682",
+          website: "http://samirsuthar.com",
+          summary: "Born and raised in Salt Lake City, Samir started out his development career with a company called New World Presents. Starting out by learning WordPress, Samir quickly moved on to learn other frameworks like AngularJS and PolymerJS. He continued to push his own development by learning how to program in C/C++/Python to create interactive art installations using Raspberry Pis and Arduinos.",
+          location: {
+            address: "25 T Street",
+            postalCode: "84103",
+            city: "Salt Lake City",
+            countryCode: "US",
+            region: "Utah"
+          },
+          profiles: [{
+              network: "LinkedIn",
+              username: "Samir Suthar",
+              url: "https://www.linkedin.com/in/samir-suthar-461a2261/"
+            },
+            {
+              network: "GitHub",
+              username: "Akashaslc",
+              url: "https://github.com/Akashaslc"
+            }
+          ]
+        }
       }
     });
   </script>

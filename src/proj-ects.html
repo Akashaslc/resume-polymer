@@ -3,11 +3,13 @@
 <dom-module id="proj-ects">
 
   <template>
-    <style>
+    <style include="iron-flex iron-flex-alignment">
       .card {
         box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 1px 5px 0 rgba(0, 0, 0, 0.12), 0 3px 1px -2px rgba(0, 0, 0, 0.2);
         padding: 16px;
         margin: 24px;
+        margin-left: 288px;
+        margin-right: 288px;
         border-radius: 5px;
         background-color: #fff;
         color: #757575;
@@ -26,6 +28,55 @@
       }
       p {
         font-size: 16px;
+        margin-left: 10px;
+        margin-right: 10px;
+      }
+      #project-photo {
+        margin-left: auto;
+        margin-right: auto;
+        width: 300px;
+        height: 300px;
+      }
+      img {
+        width: 300px;
+        height: 300px;
+        border-radius: 50%;
+        border: 6px solid black;
+        transition: 100ms ease-out;
+        box-shadow: 0 0 4px 2px rgba(0, 0, 0, 0.4);
+      }
+      img:hover {
+        transition: 100ms ease-in;
+        box-shadow: 0 0 8px 8px rgba(0, 0, 0, 0.4);
+      }
+      h1 {
+        width: 300px;
+        text-align: center;
+        margin-left: auto;
+        margin-right: auto;
+      }
+      @media (max-width:700px) {
+        .card {
+          margin-left: 24px;
+          margin-right: 24px;
+        }
+        h1, #project-photo {
+          font-size: 20px;
+          display: inherit;
+
+        }
+        #luna, #glados, #heart, #solar {
+          padding-top: 20px;
+          padding-bottom: 20px;
+        }
+        #project-photo {
+          width: 100px;
+          height: 100px;
+        }
+        img {
+          width: 100px;
+          height: 100px;
+        }
       }
     </style>
     <div class="card">
@@ -33,7 +84,43 @@
         Projects
       </div>
       <div class="line"></div>
-      <p>The quick brown fox jumped over the lazy dog.</p>
+
+      <div class="layout horizontal" id="luna">
+        <h1>| Luna |</h1>
+        <div id="project-photo">
+          <a href="https://github.com/Akashaslc/luna">
+            <img src="../images/luna.jpg"></img>
+          </a>
+        </div>
+      </div>
+
+      <div  class="layout horizontal" id="glados">
+        <h1>| GlaDOS |</h1>
+        <div id="project-photo">
+          <a href="https://github.com/Akashaslc/eyesight">
+            <img src="../images/glados.jpg"></img>
+          </a>
+        </div>
+      </div>
+
+      <div  class="layout horizontal" id="heart">
+        <h1>| Auric Heart |</h1>
+        <div id="project-photo">
+          <a href="https://github.com/Akashaslc/auricHeart">
+            <img src="../images/heart.jpg"></img>
+          </a>
+        </div>
+      </div>
+
+      <div  class="layout horizontal" id="solarsystem">
+        <h1>| Solar System |</h1>
+        <div id="project-photo">
+          <a href="https://github.com/Akashaslc/Solar-System">
+            <img src="../images/solar.jpg"></img>
+          </a>
+        </div>
+      </div>
+
     </div>
   </template>
 
