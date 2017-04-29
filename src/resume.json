@@ -14,8 +14,7 @@
       "countryCode": "US",
       "region": "Utah"
     },
-    "profiles": [
-      {
+    "profiles": [{
         "network": "LinkedIn",
         "username": "Samir Suthar",
         "url": "https://www.linkedin.com/in/samir-suthar-461a2261/"
@@ -27,8 +26,7 @@
       }
     ]
   },
-  "work": [
-    {
+  "work": [{
       "company": "New World Presents",
       "position": "Creative Designer",
       "website": "http://newworldpresents.com/",
@@ -65,39 +63,21 @@
     }
   ],
   "volunteer": [],
-  "education": [
-    {
-      "institution": "University of Utah",
-      "area": "Mechanical Engineer",
-      "studyType": "Unfinished",
-      "startDate": "2008",
-      "endDate": "2011",
-      "gpa": "3.0",
-      "courses": [
-        "Calculus I-III",
-        "Physics I-II"
-      ]
-    }
-  ],
+  "education": [{
+    "institution": "University of Utah",
+    "area": "Mechanical Engineer",
+    "studyType": "Unfinished",
+    "startDate": "2008",
+    "endDate": "2011",
+    "gpa": "3.0",
+    "courses": [
+      "Calculus I-III",
+      "Physics I-II"
+    ]
+  }],
   "awards": [],
   "publications": [],
-  "skills": [
-    {
-      "name": "Web Development",
-      "level": "Junior",
-      "keywords": [
-        "HTML",
-        "CSS",
-        "Javascript",
-        "AngularJS",
-        "Angular Material",
-        "SailsJS",
-        "ThreeJS",
-        "GsapJS",
-        "NodeJS"
-      ]
-    },
-    {
+  "skills": [{
       "name": "Mac and iOS",
       "level": "Intermediate",
       "keywords": [
@@ -128,8 +108,7 @@
       ]
     }
   ],
-  "languages": [
-    {
+  "languages": [{
       "language": "English",
       "fluency": "Native speaker"
     },
@@ -138,8 +117,7 @@
       "fluency": "2nd Language"
     }
   ],
-  "interests": [
-    {
+  "interests": [{
       "name": "Astronomy",
       "keywords": []
     },

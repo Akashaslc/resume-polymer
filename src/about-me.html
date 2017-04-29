@@ -66,13 +66,22 @@
         height: 100%;
         width: 100%;
       }
-      @media (max-width:700px) {
+      @media (max-width:1024px) {
         #container {
           display: block;
         }
         .card {
           margin-left: 24px;
           margin-right: 24px;
+        }
+      }
+      @media (max-width: 320px) {
+        .profile_pic {
+          width: 192px;
+        }
+        .profile_pic img {
+          width: 192px;
+          height: 192px;
         }
       }
     </style>
