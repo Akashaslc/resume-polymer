@@ -34,16 +34,21 @@
       #project-photo {
         margin-left: auto;
         margin-right: auto;
-        width: 300px;
-        height: 300px;
+        width: 225px;
+        height: 225px;
+      }
+      .projects {
+        margin-left: auto;
+        margin-right: auto;
+        margin-bottom: 24px;
       }
       img {
-        width: 300px;
-        height: 300px;
+        width: 225px;
+        height: 225px;
         border-radius: 50%;
         border: 6px solid black;
         transition: 100ms ease-out;
-        box-shadow: 0 0 4px 2px rgba(0, 0, 0, 0.4);
+        box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 1px 5px 0 rgba(0, 0, 0, 0.12), 0 3px 1px -2px rgba(0, 0, 0, 0.2);
       }
       img:hover {
         transition: 100ms ease-in;
@@ -55,6 +60,17 @@
         margin-left: auto;
         margin-right: auto;
       }
+      .flex-horizontal {
+        @apply(--layout-horizontal);
+      }
+      .flex-vertical {
+        @apply(--layout-vertical);
+      }
+      .flexchild {
+        @apply(--layout-flex);
+      }
+
+/* Mobile Devices */
       @media (max-width:700px) {
         .card {
           margin-left: 24px;
@@ -70,12 +86,25 @@
           padding-bottom: 20px;
         }
         #project-photo {
-          width: 100px;
-          height: 100px;
+          width: 200px;
+          height: 200px;
+          margin-left: auto;
+          margin-right: auto;
+
         }
         img {
-          width: 100px;
-          height: 100px;
+          width: 200px;
+          height: 200px;
+          border-radius: 8px;
+        }
+        .flex-horizontal {
+          @apply(--layout-vertical);
+        }
+        .flex-vertical {
+          @apply(--layout-vertical);
+        }
+        .flexchild {
+          @apply();
         }
       }
     </style>
@@ -85,34 +114,38 @@
       </div>
       <div class="line"></div>
 
-      <div class="layout horizontal" id="luna">
-        <h1>| Luna |</h1>
-        <div id="project-photo">
-          <a href="https://github.com/Akashaslc/luna">
-            <img src="../images/luna.jpg"></img>
-          </a>
-        </div>
-      </div>
+      <div class="projects">
+        <div class="flex-horizontal" id="top">
+          <div class="flexchild" id="luna">
+            <h1>| Luna |</h1>
+            <div class="layout-flex" id="project-photo">
+              <a href="https://github.com/Akashaslc/luna">
+                <img src="../images/luna.jpg"></img>
+              </a>
+            </div>
+          </div>
 
-      <div  class="layout horizontal" id="glados">
-        <h1>| GlaDOS |</h1>
-        <div id="project-photo">
-          <a href="https://github.com/Akashaslc/eyesight">
-            <img src="../images/glados.jpg"></img>
-          </a>
+          <div class="flex" id="glados">
+            <h1>| GlaDOS |</h1>
+            <div id="project-photo">
+              <a href="https://github.com/Akashaslc/eyesight">
+                <img src="../images/glados.jpg"></img>
+              </a>
+            </div>
+          </div>
         </div>
-      </div>
 
-      <div  class="layout horizontal" id="heart">
-        <h1>| Auric Heart |</h1>
-        <div id="project-photo">
-          <a href="https://github.com/Akashaslc/auricHeart">
-            <img src="../images/heart.jpg"></img>
-          </a>
-        </div>
-      </div>
+        <div class="flex-horizontal" id="bottom">
+          <div class="flex" id="heart">
+            <h1>| Auric Heart |</h1>
+            <div id="project-photo">
+              <a href="https://github.com/Akashaslc/auricHeart">
+                <img src="../images/heart.jpg"></img>
+              </a>
+            </div>
+          </div>
 
-      <div  class="layout horizontal" id="solarsystem">
+      <div class="flex" id="solarsystem">
         <h1>| Solar System |</h1>
         <div id="project-photo">
           <a href="https://github.com/Akashaslc/Solar-System">
@@ -120,6 +153,8 @@
           </a>
         </div>
       </div>
+    </div>
+  </div>
 
     </div>
   </template>

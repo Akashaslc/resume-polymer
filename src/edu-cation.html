@@ -27,13 +27,47 @@
       p {
         font-size: 16px;
       }
+
+      #edu {
+        margin-left: auto;
+        margin-right: auto;
+      }
+      .flex-horizontal {
+        @apply(--layout-horizontal);
+      }
+      .flex-vertical {
+        @apply(--layout-vertical);
+      }
+      .flexchild {
+        @apply(--layout-flex);
+      }
     </style>
     <div class="card">
       <div class="header">
         Education
       </div>
       <div class="line"></div>
-      <p>The quick brown fox jumped over the lazy dog.</p>
+
+      <div class="flex-vertical" id="edu">
+
+        <div class="flex-horizontal">
+          <h3>{{edu.institution}}</h3>
+          <h3>{{edu.area}}</h3>
+        </div>
+
+        <div class="flex-horizontal">
+          <p>{{edu.startDate}} - {{edu.endDate}}</p>
+          <p>Unfinished</p>
+        </div>
+
+        <div>
+          <ul>
+            <li>{{edu.courses.0}}</li>
+            <li>{{edu.courses.1}}</li>
+          </ul>
+        </div>
+
+      </div>
     </div>
   </template>
 
@@ -42,6 +76,19 @@
       is: 'edu-cation',
       ready: function() {
         this.style.display = 'block';
+        this.edu = {
+          "institution": "University of Utah",
+          "area": "Mechanical Engineer",
+          "studyType": "Unfinished",
+          "startDate": "2008",
+          "endDate": "2011",
+          "gpa": "3.0",
+          "courses": [
+            "Calculus I-III",
+            "Physics I-II"
+          ]
+        }
+
       }
     });
   </script>

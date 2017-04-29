@@ -1,6 +1,8 @@
 <link rel="import" href="../bower_components/polymer/polymer.html">
 
 <dom-module id="skill-chart">
+  <script src="http://d3js.org/d3.v3.min.js"></script>
+  <script src="../bower_components/chart.js/dist/Chart.js"></script>
 
   <template>
     <style>
@@ -31,6 +33,13 @@
         margin-left: 10px;
         margin-right: 10px;
       }
+      #body, #myChart {
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: 22px;
+        max-width: 700px;
+        max-height: 700px;
+      }
       @media (max-width: 700px) {
         .card {
           margin-left: 24px;
@@ -39,12 +48,16 @@
       }
 
     </style>
+
     <div class="card">
       <div class="header">
         Skills
       </div>
       <div class="line"></div>
-      <p>The quick brown fox jumped over the lazy dog.</p>
+
+      <div id="body">
+        <canvas id="myChart"></canvas>
+      </div>
 
     </div>
   </template>
@@ -54,6 +67,34 @@
       is: 'skill-chart',
       ready: function() {
         this.style.display = 'block';
+        var ctx = Polymer.dom(this.root).querySelector('#myChart');
+        var myRadarChart = new Chart(ctx, {
+          type: 'radar',
+          data: {
+            labels: ["HTML", "CSS", "Javascript", "AngularJS", "PolymerJS", "Material Design", "WebComponents", "SailsJS", "ThreeJS", "GsapJS"],
+            datasets: [{
+              label: "My Skills",
+              backgroundColor: "rgba(11,128,67,0.2)",
+              borderColor: "rgba(11,128,67,1)",
+              pointBackgroundColor: "rgba(11,128,67,1)",
+              pointBorderColor: "#fff",
+              pointHoverBackgroundColor: "#fff",
+              pointHoverBorderColor: "rgba(179,181,198,1)",
+              data: [70, 60, 45, 35, 60, 65, 45, 25, 25, 25]
+            }]
+          },
+          options: {
+            scale: {
+              reverse: false,
+              ticks: {
+                beginAtZero: true,
+                min: 0,
+                max: 100,
+                stepSize: 25
+              }
+            }
+          }
+        });
       }
     });
   </script>
