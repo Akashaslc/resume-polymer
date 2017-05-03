@@ -68,9 +68,19 @@
         height: 100%;
         width: 100%;
       }
+      a {
+        color: inherit;
+        background-color: inherit;
+      }
+      .flex-horizontal {
+        @apply(--layout-horizontal);
+      }
       @media (max-width:1024px) {
         #container {
           display: block;
+        }
+        #map {
+          height: 200px;
         }
         .card {
           margin-left: 24px;
@@ -95,18 +105,24 @@
           <img src="../images/FullSizeR-20.jpg">
         </div>
 
-        <div class="layout horizontal" id="contact">
+        <div class="flex-horizontal" id="contact">
 
           <div>
-            <paper-icon-button icon="mail"></paper-icon-button>
+            <a href="mailto:samir.suthar@me.com">
+              <paper-icon-button icon="mail"></paper-icon-button>
+            </a>
           </div>
 
             <div>
-              <paper-icon-button src="../images/github.svg"></paper-icon-button>
+              <a href="https://github.com/Akashaslc">
+                <paper-icon-button src="../images/github.svg"></paper-icon-button>
+              </a>
             </div>
 
             <div>
-              <paper-icon-button src="../images/iconmonstr-linkedin-3.svg"></paper-icon-button>
+              <a href="https://www.linkedin.com/in/samir-suthar-461a2261/">
+                <paper-icon-button src="../images/iconmonstr-linkedin-3.svg"></paper-icon-button>
+              </a>
             </div>
 
         </div>
