@@ -19,7 +19,8 @@
     "iron-icons": "PolymerElements/iron-icons#^1.2.1",
     "paper-tooltip": "PolymerElements/paper-tooltip#^1.1.4",
     "google-map": "GoogleWebComponents/google-map#^1.2.0",
-    "chart.js": "^2.5.0"
+    "chart.js": "^2.5.0",
+    "cloudinary-upload": "cloudinary-img#^1.0.1"
   },
   "devDependencies": {
     "web-component-tester": "^4.0.0"

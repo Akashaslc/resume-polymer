@@ -76,6 +76,17 @@
         @apply(--layout-flex);
       }
 
+      @media (max-width:1200px) {
+        .flex-horizontal {
+          @apply(--layout-vertical);
+        }
+        .flex-vertical {
+          @apply(--layout-vertical);
+        }
+        .flexchild {
+          @apply(--layout-flex);
+        }
+      }
 /* Mobile Devices */
       @media (max-width:1024px) {
         .card {
@@ -103,15 +114,6 @@
           height: 200px;
           border-radius: 8px;
         }
-        .flex-horizontal {
-          @apply(--layout-vertical);
-        }
-        .flex-vertical {
-          @apply(--layout-vertical);
-        }
-        .flexchild {
-          @apply();
-        }
       }
     </style>
     <div class="card">
@@ -129,7 +131,7 @@
             </div>
             <div class="layout-flex" id="project-photo">
               <a href="https://github.com/Akashaslc/luna">
-                <img src="../images/luna.jpg"></img>
+                <img src="http://res.cloudinary.com/akashaslc/image/upload/q_auto/v1494781548/luna_uoutsa.jpg"></img>
               </a>
             </div>
           </div>
@@ -141,7 +143,7 @@
             </div>
             <div id="project-photo">
               <a href="https://github.com/Akashaslc/eyesight">
-                <img src="../images/glados.jpg"></img>
+                <img src="http://res.cloudinary.com/akashaslc/image/upload/q_auto/v1494781546/glados_od66rj.jpg"></img>
               </a>
             </div>
           </div>
@@ -155,7 +157,7 @@
             </div>
             <div id="project-photo">
               <a href="https://github.com/Akashaslc/auricHeart">
-                <img src="../images/heart.jpg"></img>
+                <img src="http://res.cloudinary.com/akashaslc/image/upload/q_auto/v1494781548/heart_b7xbha.jpg"></img>
               </a>
             </div>
           </div>
@@ -167,7 +169,7 @@
         </div>
         <div id="project-photo">
           <a href="https://github.com/Akashaslc/Solar-System">
-            <img src="../images/solar.jpg"></img>
+            <img src="http://res.cloudinary.com/akashaslc/image/upload/q_auto/v1494781547/solar_ttvocc.jpg"></img>
           </a>
         </div>
       </div>
