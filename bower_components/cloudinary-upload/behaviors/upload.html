@@ -1,0 +1,57 @@
+<link rel="import" href="../cloudinary.html">
+
+<script>
+
+	window.CloudinaryBehavior = window.CloudinaryUploadBehavior || {};
+
+	CloudinaryBehavior.Upload = {
+
+		properties: {
+
+			cloudName: {
+        type: String
+      },
+
+      uploadPreset: {
+        type: String
+      },
+
+      uploadOptions: {
+        type: Object
+      },
+
+      result: {
+      	type: Array,
+      	notify: true
+      },
+
+			error: {
+				type: Object
+			},
+
+      readyForUpload: {
+      	type: Boolean,
+      	computed: '_checkRequiredAttributes(cloudName, uploadPreset)'
+      }
+
+		},
+
+		openUploadWidget: function() {
+      var myUploadOptions = this.uploadOptions || {};
+
+      myUploadOptions.cloud_name = this.cloudName;
+      myUploadOptions.upload_preset = this.uploadPreset;
+
+      cloudinary.openUploadWidget(myUploadOptions, function(error, result) {
+        this.result = result;
+        this.error = error;
+      }.bind(this));
+    },
+
+    _checkRequiredAttributes: function(cloudName, uploadPreset) {
+    	return cloudName && uploadPreset;
+    }
+
+	}
+
+</script>
